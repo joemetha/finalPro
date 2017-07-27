@@ -1,0 +1,22 @@
+<div class="container-fluid">
+
+
+    <div class="w3-row">
+      <div class="w3-container w3-threequarter"><h1>{{name}}</h1></div>
+      <div class="w3-container w3-padding-24 w3-right" *ngIf="notHasRole('ADMIN,USER,SHOPKEEPER')"><button role="presentation" class="w3-button w3-teal w3-round" routerLinkActive="active" routerLink="/login">Login</button></div>
+      <div class="w3-container w3-padding-24 w3-right" *ngIf="hasRole('ADMIN,USER,SHOPKEEPER')"><button role="presentation" class="w3-button w3-red w3-round" routerLinkActive="active" routerLink="/login">Logout</button></div>
+
+    </div>
+
+
+  <div class="row w3-padding-16">
+    <div class="col-sm-3 col-md-2 ">
+      <menu></menu>
+    </div>
+    <div class="col-sm-9 col-md-8">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="row">
+  </div>
+</div>

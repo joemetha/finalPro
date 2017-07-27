@@ -1,0 +1,45 @@
+<div class="w3-container">
+<h2 class="panel col-md-6">Your Cart</h2>
+</div>
+
+  <div *ngFor="let product of products">
+  <div class="panel panel-primary w3-light-gray" >
+
+    <h4 class="w3-blue-gray w3-padding-small w3-round">{{product.name}}</h4>
+
+    <div class="panel-body row">
+      <div class="col-md-6">
+
+        <p>Price : {{product.price| currency:'USD':true}}</p>
+
+      </div>
+
+      <div class="col-md-4 w3-right">
+        <button role="presentation" class="w3-button w3-red w3-round w3-right" (click)="deleteCart(product)" >Delete</button>
+      </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+<div class="w3-center" *ngIf="products.length>0">
+
+<div class="w3-container">
+  <p class="w3-right">Total price : {{showPrice()}}</p>
+
+  </div>
+
+<div >
+
+  <button role="presentation" class="w3-button w3-round w3-green" (click)="goSlip()" >Check out</button>
+  </div>
+
+
+</div>
+
+<div class="w3-center panel panel-primary w3-sand w3-padding-24" *ngIf="products.length==0">
+  <h2 class="w3-center">No product in your cart!!</h2>
+  </div>
+

@@ -1,0 +1,25 @@
+<h2 class="panel col-md-offset-2 col-md-6">Edit Product</h2>
+<div *ngFor="let product of products">
+  <div class="panel panel-primary col-md-offset-2 col-md-9 w3-light-gray">
+
+    <h4 class="w3-blue-gray w3-padding-small w3-round">{{product.name}}</h4>
+
+    <div class="panel-body row">
+      <div class="col-md-6">
+
+        <p>Rating : {{product.rate}}</p>
+        <p>In stock : {{product.amount}}</p>
+        <p>Price : {{product.price | currency:'USD':true}}</p>
+        <p>Description : {{product.description}}</p>
+
+      </div>
+      <div class="">
+        <img class="col-md-4"  [src]="product.image" >
+      </div>
+      <button class="w3-button w3-round w3-amber" (click)="editDetail(product)">Edit Product</button>
+      <button class="w3-button w3-round w3-red" (click)="deleteProduct(product)">Delete</button>
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,18 @@
+<div class="w3container w3-center w3-light-gray">
+  <div class="w3-padding-16">
+    <h1 class="w3-padding-16">Confirmation</h1>
+    <div *ngFor="let product of products">
+
+
+        <h4 class="">{{product.name}}</h4>
+      </div>
+    </div>
+<div class="w3-container ">
+  <p class="">Quantity : {{showQuantity()}}</p>
+  <p class="">Total price : {{showPrice()}}</p>
+
+</div>
+</div>
+<div class="w3-center w3-padding-24">
+<button role="presentation" class="w3-button w3-round w3-green" (click)="purches()">Confirm Purchesing</button>
+</div>
